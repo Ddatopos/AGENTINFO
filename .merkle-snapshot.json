@@ -1,0 +1,994 @@
+{
+  "rootHash": "d138992a739cb9596b1b3f1817524dc07b18318f5ad3f81d9e236b1323b73484",
+  "timestamp": 1787292466626,
+  "fileCount": 55,
+  "files": [
+    {
+      "path": "web\\vite.config.ts",
+      "hash": "0bab1f138028928fc816ac1983d43024edf798d1b7b4856b3f211d6b90c4bb35",
+      "size": 268,
+      "modified": 1787233896626.662
+    },
+    {
+      "path": "web\\src\\App.tsx",
+      "hash": "4de9fe469858976e10d8cd2d78eec1d86c492f1a83128dab62ae172418cda2bb",
+      "size": 1154,
+      "modified": 1787283402791.0115
+    },
+    {
+      "path": "web\\src\\main.tsx",
+      "hash": "c195b73297378774aadf887a682cd3c011801c35067961772cf1c0036e8562b5",
+      "size": 642,
+      "modified": 1787235040065.0938
+    },
+    {
+      "path": "web\\src\\vite-env.d.ts",
+      "hash": "2f52245d4fb19b720b1e5be4c6ed071915ec84da11cce9b141b3d3a0849d23d4",
+      "size": 38,
+      "modified": 1787233940719.5015
+    },
+    {
+      "path": "web\\src\\store\\useAppStore.ts",
+      "hash": "3faf2e0d15760dcfc10d23733c1f50bcc51fa9fb4a4b37a7c4a7b65f559878e8",
+      "size": 560,
+      "modified": 1787282879743.7004
+    },
+    {
+      "path": "web\\src\\screens\\Agents.tsx",
+      "hash": "89b0b4fa00f2aa07021b519067f0fce1e41f8f97e052d01f7a9f56cac79af194",
+      "size": 2652,
+      "modified": 1787283392660.0515
+    },
+    {
+      "path": "web\\src\\screens\\Briefings.tsx",
+      "hash": "f163aa7dab99d7be53e208394cb234ecbd346415d509abca872257b7de1635f0",
+      "size": 5698,
+      "modified": 1787235025289.827
+    },
+    {
+      "path": "web\\src\\screens\\Home.tsx",
+      "hash": "7f98670f61e43cba00722c5f6d39b2c374d9a0dcb4aabdcd1a5f57296377c5ed",
+      "size": 1210,
+      "modified": 1787288626729.453
+    },
+    {
+      "path": "web\\src\\screens\\Sources.tsx",
+      "hash": "a1b712da403e5597c0a7078aa4e87a07b4f8f8e3ec55db4b57d746adecc2e62d",
+      "size": 1595,
+      "modified": 1787235395787.4841
+    },
+    {
+      "path": "web\\src\\screens\\Welcome.tsx",
+      "hash": "0fe0614bab9e600db1dad81ad9c213cfb02fa0f51dc1e492b66f67358c6ee912",
+      "size": 2604,
+      "modified": 1787284873889.7007
+    },
+    {
+      "path": "web\\src\\components\\BackToTop.tsx",
+      "hash": "9740ffc23c0ab8777626bd031827ef54387a201eb92841eecb56723a01148911",
+      "size": 820,
+      "modified": 1787234876484.61
+    },
+    {
+      "path": "web\\src\\components\\FilterBar.tsx",
+      "hash": "2e393f34a198b15ccfa49ac1f4b8acaaba9e71ea498033c8af9d5ed8ef32d7fd",
+      "size": 4286,
+      "modified": 1787234947151.6882
+    },
+    {
+      "path": "web\\src\\components\\GlitchText.tsx",
+      "hash": "089e0cb6b5e22344ac1a1e4426b62e40a39bd78a21810367fe36b558bc3ddfe1",
+      "size": 387,
+      "modified": 1787234947152.6907
+    },
+    {
+      "path": "web\\src\\components\\ItemCard.tsx",
+      "hash": "f456b50e8a0b78250eb58c95d2fd50f311129482793c79ea2e3744bbba23d9d9",
+      "size": 2170,
+      "modified": 1787234947113.5894
+    },
+    {
+      "path": "web\\src\\components\\ScanlineOverlay.tsx",
+      "hash": "e8269a7025d7f410a75eebc665d5718dee9bba16e2d242d37b2636aac0171b2e",
+      "size": 60,
+      "modified": 1787234947154.6887
+    },
+    {
+      "path": "web\\src\\components\\Sidebar.tsx",
+      "hash": "b6ee6bb7e0969cb66a46cf4c52c91e8eda4d7a16627904011cc12eceee99ba22",
+      "size": 1571,
+      "modified": 1787235422950.1748
+    },
+    {
+      "path": "web\\src\\components\\SourceCard.tsx",
+      "hash": "5a1c7a26b5e7921d47085c89a7544baa43c02aa40b67767cb316ca34a278fc8b",
+      "size": 2670,
+      "modified": 1787234947114.6025
+    },
+    {
+      "path": "web\\src\\components\\StatCard.tsx",
+      "hash": "4c4545c16d1dceb5adab3eaae6ac0cbb76be8cab86f343c6da38c7889cb18a4b",
+      "size": 872,
+      "modified": 1787234876484.61
+    },
+    {
+      "path": "web\\src\\components\\layout\\Header.tsx",
+      "hash": "f406d8a3051772f0660552257a5af303dcee5ab4b00d9e53e59014dc42242e6a",
+      "size": 2337,
+      "modified": 1787283024521.9978
+    },
+    {
+      "path": "web\\src\\components\\layout\\HeroSection.tsx",
+      "hash": "de57359a260dd85c67af14c5395fb229cbf22b24d41622cf2f65f422f238fa05",
+      "size": 2935,
+      "modified": 1787282191463.373
+    },
+    {
+      "path": "web\\src\\components\\layout\\StatsBar.tsx",
+      "hash": "9999edacd16c14d52c70ed53b35f8afbc550440e31ca543b222a759df39fd4eb",
+      "size": 1024,
+      "modified": 1787290043317.4814
+    },
+    {
+      "path": "web\\src\\components\\home\\AgentSidebar.tsx",
+      "hash": "a88e3d47835bcd8b9ac4fa4a85549d4c6ceae5f9377f2abdec7c67738fa46dfe",
+      "size": 3657,
+      "modified": 1787282218988.812
+    },
+    {
+      "path": "web\\src\\components\\home\\HotFeed.tsx",
+      "hash": "c4a17aa7cc6a13a7542bfc3e816c37f0ac6dfe7689753a27ec8a7ee23100bfc1",
+      "size": 8006,
+      "modified": 1787284295762.4038
+    },
+    {
+      "path": "web\\src\\components\\home\\SearchInsights.tsx",
+      "hash": "9d598deff7fdc36723eecf1c02664e22278f715378e41825f76c4694734488c5",
+      "size": 5005,
+      "modified": 1787283986096.1362
+    },
+    {
+      "path": "web\\src\\api\\client.ts",
+      "hash": "6ae79f23a56d8da713a0a1fa4b14635dee52109d87dfb2369ad8dfbc1bf9ccfa",
+      "size": 654,
+      "modified": 1787233940727.729
+    },
+    {
+      "path": "web\\src\\api\\types.ts",
+      "hash": "52abcee4c003aef76516e65d6c5bd9c5715e41c6a9af1eb37a78d2319d510257",
+      "size": 1411,
+      "modified": 1787290030790.2449
+    },
+    {
+      "path": "server\\src\\cli.ts",
+      "hash": "3f99ae72e5c0bba526f66ad77893c4729fd59d57c6552870051250a91af5d039",
+      "size": 6028,
+      "modified": 1787230138161.1792
+    },
+    {
+      "path": "server\\src\\config.ts",
+      "hash": "8438ca3e1823c44b8d4333e4b4a0f33290fe95d5dd5ca5b861963ea0a29ebdd8",
+      "size": 2771,
+      "modified": 1787292092221.1921
+    },
+    {
+      "path": "server\\src\\index.ts",
+      "hash": "e29b65927f40995320708ce46db28d4700b4a55129009783de163fc954a9009c",
+      "size": 2590,
+      "modified": 1787292103791.0757
+    },
+    {
+      "path": "server\\src\\scheduler.ts",
+      "hash": "30c0b5958fe691f2dc1ec306fbcf86b369db83fb0ab15aef3eb2969f8f2778f6",
+      "size": 4414,
+      "modified": 1787230217522.0894
+    },
+    {
+      "path": "server\\src\\sources\\registry.ts",
+      "hash": "17404bf838578bf0242fe2ec2aeea1652b1a25623d6f46cc1ee406c7e24c55da",
+      "size": 5531,
+      "modified": 1787224896174.5486
+    },
+    {
+      "path": "server\\src\\routes\\briefings.ts",
+      "hash": "21df30500a3040166e8c8378e09b7508d015306c27007a77a6c8c2deb39459be",
+      "size": 2834,
+      "modified": 1787230278233.9285
+    },
+    {
+      "path": "server\\src\\routes\\items.ts",
+      "hash": "3fbd3dee6d6acc1aec6be2a05a04619668df8a6bec32429f768a7e2324d6955b",
+      "size": 4660,
+      "modified": 1787292065368.5876
+    },
+    {
+      "path": "server\\src\\routes\\sources.ts",
+      "hash": "053ec0733fab0e632ffc7fe94e463689a45bbc0656cafa40e2ba5e1e1734c54a",
+      "size": 3273,
+      "modified": 1787290013802.1245
+    },
+    {
+      "path": "server\\src\\pipeline\\briefing.ts",
+      "hash": "b27a04988072cd8d61019b6d44c8c15b4dc038e8eddf9a3e5308fd89d1b8c2cb",
+      "size": 6847,
+      "modified": 1787229823308.8076
+    },
+    {
+      "path": "server\\src\\pipeline\\enrich.ts",
+      "hash": "0a80a90f4899f10128711774130f4e4ba15db74816ab6526b962a32753e5512f",
+      "size": 7258,
+      "modified": 1787292183022.3435
+    },
+    {
+      "path": "server\\src\\pipeline\\fetch.ts",
+      "hash": "4f01103bdf6d846986a094d947518805cf7636b3cd6861bc6e09ccbf5db8de47",
+      "size": 5942,
+      "modified": 1787229632260.252
+    },
+    {
+      "path": "server\\src\\pipeline\\ingest.ts",
+      "hash": "24bcfe0db2a632aa8e728380b9fbe1c696e8511dac9801ee3c5fd00cf381b913",
+      "size": 4807,
+      "modified": 1787292248334.1428
+    },
+    {
+      "path": "server\\src\\pipeline\\keywords.ts",
+      "hash": "419ec6075e0a926a6a3ceab19273a1480434630835c3b07835a2b5ea650b352a",
+      "size": 5186,
+      "modified": 1787292286614.5588
+    },
+    {
+      "path": "server\\src\\pipeline\\rank.ts",
+      "hash": "657d5ca3cd35b5a748d3dd5db0ebd5aa8cd560e8b086fb75894851d767210355",
+      "size": 4711,
+      "modified": 1787292211363.922
+    },
+    {
+      "path": "server\\src\\lib\\http.ts",
+      "hash": "bc1c7cb704bcaef6f1127c50b2c55ffda7de6a88742fcf870fc358917ff13c05",
+      "size": 4471,
+      "modified": 1787227100130.704
+    },
+    {
+      "path": "server\\src\\lib\\llm.ts",
+      "hash": "b78c68c7d392eb71a8bdc5d101409d12434b7aa97a7c4c41d55f918926cd7c2e",
+      "size": 5344,
+      "modified": 1787292449305.4368
+    },
+    {
+      "path": "server\\src\\lib\\text.ts",
+      "hash": "1b9f734b57f419a40ce340b36cdd1b099126bad2aba11b455790e4f492a5f97a",
+      "size": 2604,
+      "modified": 1787224813519.8997
+    },
+    {
+      "path": "server\\src\\db\\index.ts",
+      "hash": "5404f4e23421211934ff5657114e68534e0c972afabcad952e176f1024854be1",
+      "size": 855,
+      "modified": 1787224813401.032
+    },
+    {
+      "path": "server\\src\\db\\migrate.ts",
+      "hash": "cd38bd1256fb91fda1c94c2179e0391a088ad1dbc76ffd4c25b66c33e441a795",
+      "size": 2724,
+      "modified": 1787229771412.5505
+    },
+    {
+      "path": "server\\src\\adapters\\github.ts",
+      "hash": "cda911dd839ae755c3136f29a2a597626054db327a1720025e2a9fb461114d06",
+      "size": 7575,
+      "modified": 1787229449069.6023
+    },
+    {
+      "path": "server\\src\\adapters\\hn.ts",
+      "hash": "42521a62cf21ad071be8d037066cffc95d6e2d8da766e7ae84eb45655855315d",
+      "size": 3911,
+      "modified": 1787225998470.5278
+    },
+    {
+      "path": "server\\src\\adapters\\html.ts",
+      "hash": "4b982da445b0591c8c074a52c59e120ded0c6e2163c7c6a70fcc894f97782604",
+      "size": 4510,
+      "modified": 1787227301746.1301
+    },
+    {
+      "path": "server\\src\\adapters\\huggingface.ts",
+      "hash": "03722da08390d3815ef95d30213b8c6ea2c7bbc6f3f5a007ae55cd0e1dd907de",
+      "size": 5796,
+      "modified": 1787226129875.3086
+    },
+    {
+      "path": "server\\src\\adapters\\index.ts",
+      "hash": "4d184d504c9f8bad32080a422c02cf77f4669dfa9f4228cd6f1036f3e0ad6a32",
+      "size": 1089,
+      "modified": 1787226278897.302
+    },
+    {
+      "path": "server\\src\\adapters\\rss.ts",
+      "hash": "da63c467fe0a38a6d7208a82ee552d4131df81239ee9ad98c6354679adce9327",
+      "size": 2732,
+      "modified": 1787225498135.7249
+    },
+    {
+      "path": "server\\src\\adapters\\types.ts",
+      "hash": "92e2e7abcb8b7d71934a28cfc0993a1189ab1e01ec44a183bee1c365f9eb1df0",
+      "size": 1543,
+      "modified": 1787224826916.4736
+    },
+    {
+      "path": ".opencode\\skills\\ui-ux-pro-max\\scripts\\core.py",
+      "hash": "dbe969e704d1cbe3afc87d4de22e9366bba1c86e7aa1e6facf569568d8779d3f",
+      "size": 10227,
+      "modified": 1787233305536.002
+    },
+    {
+      "path": ".opencode\\skills\\ui-ux-pro-max\\scripts\\design_system.py",
+      "hash": "db1634fa0ec50aa5e518a14d6f7e7054dfcded222538b3c57efbfcf020d6f9c1",
+      "size": 43614,
+      "modified": 1787233305538.0017
+    },
+    {
+      "path": ".opencode\\skills\\ui-ux-pro-max\\scripts\\search.py",
+      "hash": "c2673ed1c799d2ae4a18ce4239a6a2b9d3df704a343fd39b8bca4f9c52eb5049",
+      "size": 5478,
+      "modified": 1787233305540.0024
+    }
+  ],
+  "tree": {
+    "hash": "d138992a739cb9596b1b3f1817524dc07b18318f5ad3f81d9e236b1323b73484",
+    "left": {
+      "hash": "aec8cfb336dd78c303cf3fcf55e408a3480655bd1921ec1d12f980bef7315fe4",
+      "left": {
+        "hash": "d48d55a1271047b72c3e5e9b159572c3b1569f92a22ed289691328a3907393cf",
+        "left": {
+          "hash": "0420beb4df5ba998809c303069aae220600bbcda71b50005c69f9a2bf4c10839",
+          "left": {
+            "hash": "633d68b2b3d42af209289937d4783868c823d223b65277041ea548a65f4e3ec0",
+            "left": {
+              "hash": "de4c2790fd059da09659ff7ba2624d0afece7fe3bca3ddfb9bce3121cf6cce06",
+              "left": {
+                "hash": "dbe969e704d1cbe3afc87d4de22e9366bba1c86e7aa1e6facf569568d8779d3f",
+                "file": {
+                  "path": ".opencode\\skills\\ui-ux-pro-max\\scripts\\core.py",
+                  "hash": "dbe969e704d1cbe3afc87d4de22e9366bba1c86e7aa1e6facf569568d8779d3f",
+                  "size": 10227,
+                  "modified": 1787233305536.002
+                }
+              },
+              "right": {
+                "hash": "db1634fa0ec50aa5e518a14d6f7e7054dfcded222538b3c57efbfcf020d6f9c1",
+                "file": {
+                  "path": ".opencode\\skills\\ui-ux-pro-max\\scripts\\design_system.py",
+                  "hash": "db1634fa0ec50aa5e518a14d6f7e7054dfcded222538b3c57efbfcf020d6f9c1",
+                  "size": 43614,
+                  "modified": 1787233305538.0017
+                }
+              }
+            },
+            "right": {
+              "hash": "f35d7b456f849b0f73855354438ba1633478ad841a7da65206c5f92908780959",
+              "left": {
+                "hash": "c2673ed1c799d2ae4a18ce4239a6a2b9d3df704a343fd39b8bca4f9c52eb5049",
+                "file": {
+                  "path": ".opencode\\skills\\ui-ux-pro-max\\scripts\\search.py",
+                  "hash": "c2673ed1c799d2ae4a18ce4239a6a2b9d3df704a343fd39b8bca4f9c52eb5049",
+                  "size": 5478,
+                  "modified": 1787233305540.0024
+                }
+              },
+              "right": {
+                "hash": "cda911dd839ae755c3136f29a2a597626054db327a1720025e2a9fb461114d06",
+                "file": {
+                  "path": "server\\src\\adapters\\github.ts",
+                  "hash": "cda911dd839ae755c3136f29a2a597626054db327a1720025e2a9fb461114d06",
+                  "size": 7575,
+                  "modified": 1787229449069.6023
+                }
+              }
+            }
+          },
+          "right": {
+            "hash": "745aab6072e088ab89eeb75d50229a7e84e1fbf96d2431d33e676aca97d47698",
+            "left": {
+              "hash": "48be92f644ad0a4ed9b91d7fbc8c058f48a79c336c75ce4fbb4ec85c1a8e6cc9",
+              "left": {
+                "hash": "42521a62cf21ad071be8d037066cffc95d6e2d8da766e7ae84eb45655855315d",
+                "file": {
+                  "path": "server\\src\\adapters\\hn.ts",
+                  "hash": "42521a62cf21ad071be8d037066cffc95d6e2d8da766e7ae84eb45655855315d",
+                  "size": 3911,
+                  "modified": 1787225998470.5278
+                }
+              },
+              "right": {
+                "hash": "4b982da445b0591c8c074a52c59e120ded0c6e2163c7c6a70fcc894f97782604",
+                "file": {
+                  "path": "server\\src\\adapters\\html.ts",
+                  "hash": "4b982da445b0591c8c074a52c59e120ded0c6e2163c7c6a70fcc894f97782604",
+                  "size": 4510,
+                  "modified": 1787227301746.1301
+                }
+              }
+            },
+            "right": {
+              "hash": "14ccbb9c0f79acfc1007ab0a14949f4aacdb68f0907c54d4c21345a84a35b373",
+              "left": {
+                "hash": "03722da08390d3815ef95d30213b8c6ea2c7bbc6f3f5a007ae55cd0e1dd907de",
+                "file": {
+                  "path": "server\\src\\adapters\\huggingface.ts",
+                  "hash": "03722da08390d3815ef95d30213b8c6ea2c7bbc6f3f5a007ae55cd0e1dd907de",
+                  "size": 5796,
+                  "modified": 1787226129875.3086
+                }
+              },
+              "right": {
+                "hash": "4d184d504c9f8bad32080a422c02cf77f4669dfa9f4228cd6f1036f3e0ad6a32",
+                "file": {
+                  "path": "server\\src\\adapters\\index.ts",
+                  "hash": "4d184d504c9f8bad32080a422c02cf77f4669dfa9f4228cd6f1036f3e0ad6a32",
+                  "size": 1089,
+                  "modified": 1787226278897.302
+                }
+              }
+            }
+          }
+        },
+        "right": {
+          "hash": "19c2143d1a885897046d12cf1e20b2eeba3e8d27dc25b6f8c59dc044f5749bb6",
+          "left": {
+            "hash": "d617430f296e681ba45b7cf17f77cb067f734152d868c3988ef0be2a62fb9517",
+            "left": {
+              "hash": "7019db2bbbdce8c3832c8fc33f03f3a6e306c113db59959a06651b252b092d57",
+              "left": {
+                "hash": "da63c467fe0a38a6d7208a82ee552d4131df81239ee9ad98c6354679adce9327",
+                "file": {
+                  "path": "server\\src\\adapters\\rss.ts",
+                  "hash": "da63c467fe0a38a6d7208a82ee552d4131df81239ee9ad98c6354679adce9327",
+                  "size": 2732,
+                  "modified": 1787225498135.7249
+                }
+              },
+              "right": {
+                "hash": "92e2e7abcb8b7d71934a28cfc0993a1189ab1e01ec44a183bee1c365f9eb1df0",
+                "file": {
+                  "path": "server\\src\\adapters\\types.ts",
+                  "hash": "92e2e7abcb8b7d71934a28cfc0993a1189ab1e01ec44a183bee1c365f9eb1df0",
+                  "size": 1543,
+                  "modified": 1787224826916.4736
+                }
+              }
+            },
+            "right": {
+              "hash": "30b839ee8e4d9e1e88b52bd6527011061d36e620c5b421d50ab4384fd6894220",
+              "left": {
+                "hash": "3f99ae72e5c0bba526f66ad77893c4729fd59d57c6552870051250a91af5d039",
+                "file": {
+                  "path": "server\\src\\cli.ts",
+                  "hash": "3f99ae72e5c0bba526f66ad77893c4729fd59d57c6552870051250a91af5d039",
+                  "size": 6028,
+                  "modified": 1787230138161.1792
+                }
+              },
+              "right": {
+                "hash": "8438ca3e1823c44b8d4333e4b4a0f33290fe95d5dd5ca5b861963ea0a29ebdd8",
+                "file": {
+                  "path": "server\\src\\config.ts",
+                  "hash": "8438ca3e1823c44b8d4333e4b4a0f33290fe95d5dd5ca5b861963ea0a29ebdd8",
+                  "size": 2771,
+                  "modified": 1787292092221.1921
+                }
+              }
+            }
+          },
+          "right": {
+            "hash": "afba97a1dab71949ef269f5056ed91ba8c2fd80fa76dc02b9ef086c7714a7ea8",
+            "left": {
+              "hash": "97c0f17dd95af02444c25220c44ed951a4b94677f5952f6c17d9e592eeea70b2",
+              "left": {
+                "hash": "5404f4e23421211934ff5657114e68534e0c972afabcad952e176f1024854be1",
+                "file": {
+                  "path": "server\\src\\db\\index.ts",
+                  "hash": "5404f4e23421211934ff5657114e68534e0c972afabcad952e176f1024854be1",
+                  "size": 855,
+                  "modified": 1787224813401.032
+                }
+              },
+              "right": {
+                "hash": "cd38bd1256fb91fda1c94c2179e0391a088ad1dbc76ffd4c25b66c33e441a795",
+                "file": {
+                  "path": "server\\src\\db\\migrate.ts",
+                  "hash": "cd38bd1256fb91fda1c94c2179e0391a088ad1dbc76ffd4c25b66c33e441a795",
+                  "size": 2724,
+                  "modified": 1787229771412.5505
+                }
+              }
+            },
+            "right": {
+              "hash": "61a0e8e3207ee4a3e6d8c8a49bb14b466e25573ab517e1a6d816ba915dca16db",
+              "left": {
+                "hash": "e29b65927f40995320708ce46db28d4700b4a55129009783de163fc954a9009c",
+                "file": {
+                  "path": "server\\src\\index.ts",
+                  "hash": "e29b65927f40995320708ce46db28d4700b4a55129009783de163fc954a9009c",
+                  "size": 2590,
+                  "modified": 1787292103791.0757
+                }
+              },
+              "right": {
+                "hash": "bc1c7cb704bcaef6f1127c50b2c55ffda7de6a88742fcf870fc358917ff13c05",
+                "file": {
+                  "path": "server\\src\\lib\\http.ts",
+                  "hash": "bc1c7cb704bcaef6f1127c50b2c55ffda7de6a88742fcf870fc358917ff13c05",
+                  "size": 4471,
+                  "modified": 1787227100130.704
+                }
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "hash": "0af593c4171f62326ee7471a0449c2b94feb4239e87cd8a6e82e18e9a470b303",
+        "left": {
+          "hash": "1b01c846e317b10fccac5dcb14538b2fd179a03e699a4535e72f64ee97e446bb",
+          "left": {
+            "hash": "52adc07ef9a5d8ef9164c4ab11e287a50f56af39e654eb2b903bb9c2271701f2",
+            "left": {
+              "hash": "ba1e08f1b428aea1be6c764848d4fba16d5c273337f14e6fbff7f3aad39d55fc",
+              "left": {
+                "hash": "b78c68c7d392eb71a8bdc5d101409d12434b7aa97a7c4c41d55f918926cd7c2e",
+                "file": {
+                  "path": "server\\src\\lib\\llm.ts",
+                  "hash": "b78c68c7d392eb71a8bdc5d101409d12434b7aa97a7c4c41d55f918926cd7c2e",
+                  "size": 5344,
+                  "modified": 1787292449305.4368
+                }
+              },
+              "right": {
+                "hash": "1b9f734b57f419a40ce340b36cdd1b099126bad2aba11b455790e4f492a5f97a",
+                "file": {
+                  "path": "server\\src\\lib\\text.ts",
+                  "hash": "1b9f734b57f419a40ce340b36cdd1b099126bad2aba11b455790e4f492a5f97a",
+                  "size": 2604,
+                  "modified": 1787224813519.8997
+                }
+              }
+            },
+            "right": {
+              "hash": "a276b4bde0c2becb32d4c823c54ddddec513dad3874036ffbd5bc752dba9073c",
+              "left": {
+                "hash": "b27a04988072cd8d61019b6d44c8c15b4dc038e8eddf9a3e5308fd89d1b8c2cb",
+                "file": {
+                  "path": "server\\src\\pipeline\\briefing.ts",
+                  "hash": "b27a04988072cd8d61019b6d44c8c15b4dc038e8eddf9a3e5308fd89d1b8c2cb",
+                  "size": 6847,
+                  "modified": 1787229823308.8076
+                }
+              },
+              "right": {
+                "hash": "0a80a90f4899f10128711774130f4e4ba15db74816ab6526b962a32753e5512f",
+                "file": {
+                  "path": "server\\src\\pipeline\\enrich.ts",
+                  "hash": "0a80a90f4899f10128711774130f4e4ba15db74816ab6526b962a32753e5512f",
+                  "size": 7258,
+                  "modified": 1787292183022.3435
+                }
+              }
+            }
+          },
+          "right": {
+            "hash": "c56eb8f607450a6e221a701ca8efc8f3b18005ce9126733347f9a959fd5f5797",
+            "left": {
+              "hash": "c49a270c0cbf311168e1f89bb0ae33b0d9426692363e32a6fdcc17bc3510f378",
+              "left": {
+                "hash": "4f01103bdf6d846986a094d947518805cf7636b3cd6861bc6e09ccbf5db8de47",
+                "file": {
+                  "path": "server\\src\\pipeline\\fetch.ts",
+                  "hash": "4f01103bdf6d846986a094d947518805cf7636b3cd6861bc6e09ccbf5db8de47",
+                  "size": 5942,
+                  "modified": 1787229632260.252
+                }
+              },
+              "right": {
+                "hash": "24bcfe0db2a632aa8e728380b9fbe1c696e8511dac9801ee3c5fd00cf381b913",
+                "file": {
+                  "path": "server\\src\\pipeline\\ingest.ts",
+                  "hash": "24bcfe0db2a632aa8e728380b9fbe1c696e8511dac9801ee3c5fd00cf381b913",
+                  "size": 4807,
+                  "modified": 1787292248334.1428
+                }
+              }
+            },
+            "right": {
+              "hash": "63e1410aa0cd71d58950084e0bf97992aa8cb939ed1b6bfd2b215dd8a55dabef",
+              "left": {
+                "hash": "419ec6075e0a926a6a3ceab19273a1480434630835c3b07835a2b5ea650b352a",
+                "file": {
+                  "path": "server\\src\\pipeline\\keywords.ts",
+                  "hash": "419ec6075e0a926a6a3ceab19273a1480434630835c3b07835a2b5ea650b352a",
+                  "size": 5186,
+                  "modified": 1787292286614.5588
+                }
+              },
+              "right": {
+                "hash": "657d5ca3cd35b5a748d3dd5db0ebd5aa8cd560e8b086fb75894851d767210355",
+                "file": {
+                  "path": "server\\src\\pipeline\\rank.ts",
+                  "hash": "657d5ca3cd35b5a748d3dd5db0ebd5aa8cd560e8b086fb75894851d767210355",
+                  "size": 4711,
+                  "modified": 1787292211363.922
+                }
+              }
+            }
+          }
+        },
+        "right": {
+          "hash": "b80cdc1d397e2fba0b12f49cb3ef55c1de61e8e4df79b52974808dec1dc515ed",
+          "left": {
+            "hash": "5b79055c560471bdc9760ae45a88e282905db46ca0c1e8afb0966e9aafe309b5",
+            "left": {
+              "hash": "4788b8f1afaa68d4cebc5c45a7089711ee07c18043ec70ae89bf0ad387bfe179",
+              "left": {
+                "hash": "21df30500a3040166e8c8378e09b7508d015306c27007a77a6c8c2deb39459be",
+                "file": {
+                  "path": "server\\src\\routes\\briefings.ts",
+                  "hash": "21df30500a3040166e8c8378e09b7508d015306c27007a77a6c8c2deb39459be",
+                  "size": 2834,
+                  "modified": 1787230278233.9285
+                }
+              },
+              "right": {
+                "hash": "3fbd3dee6d6acc1aec6be2a05a04619668df8a6bec32429f768a7e2324d6955b",
+                "file": {
+                  "path": "server\\src\\routes\\items.ts",
+                  "hash": "3fbd3dee6d6acc1aec6be2a05a04619668df8a6bec32429f768a7e2324d6955b",
+                  "size": 4660,
+                  "modified": 1787292065368.5876
+                }
+              }
+            },
+            "right": {
+              "hash": "8fc2c00ecb1e6800775af3c1edf47f935e0b13b72041d68fdaa710e87c0734cc",
+              "left": {
+                "hash": "053ec0733fab0e632ffc7fe94e463689a45bbc0656cafa40e2ba5e1e1734c54a",
+                "file": {
+                  "path": "server\\src\\routes\\sources.ts",
+                  "hash": "053ec0733fab0e632ffc7fe94e463689a45bbc0656cafa40e2ba5e1e1734c54a",
+                  "size": 3273,
+                  "modified": 1787290013802.1245
+                }
+              },
+              "right": {
+                "hash": "30c0b5958fe691f2dc1ec306fbcf86b369db83fb0ab15aef3eb2969f8f2778f6",
+                "file": {
+                  "path": "server\\src\\scheduler.ts",
+                  "hash": "30c0b5958fe691f2dc1ec306fbcf86b369db83fb0ab15aef3eb2969f8f2778f6",
+                  "size": 4414,
+                  "modified": 1787230217522.0894
+                }
+              }
+            }
+          },
+          "right": {
+            "hash": "f1b5de53b802c0121a7b58fb4d65ac2a565aebf037415bb59f005a2966f24704",
+            "left": {
+              "hash": "7e01642aed512d04f971bdaf38fdc173ea17b3eea240a1438ed5b1355908e48a",
+              "left": {
+                "hash": "17404bf838578bf0242fe2ec2aeea1652b1a25623d6f46cc1ee406c7e24c55da",
+                "file": {
+                  "path": "server\\src\\sources\\registry.ts",
+                  "hash": "17404bf838578bf0242fe2ec2aeea1652b1a25623d6f46cc1ee406c7e24c55da",
+                  "size": 5531,
+                  "modified": 1787224896174.5486
+                }
+              },
+              "right": {
+                "hash": "6ae79f23a56d8da713a0a1fa4b14635dee52109d87dfb2369ad8dfbc1bf9ccfa",
+                "file": {
+                  "path": "web\\src\\api\\client.ts",
+                  "hash": "6ae79f23a56d8da713a0a1fa4b14635dee52109d87dfb2369ad8dfbc1bf9ccfa",
+                  "size": 654,
+                  "modified": 1787233940727.729
+                }
+              }
+            },
+            "right": {
+              "hash": "8fb5df75da0aed54582bf72eb1805aa5000dcdb6dec9bc964a36b24b4744a4c0",
+              "left": {
+                "hash": "52abcee4c003aef76516e65d6c5bd9c5715e41c6a9af1eb37a78d2319d510257",
+                "file": {
+                  "path": "web\\src\\api\\types.ts",
+                  "hash": "52abcee4c003aef76516e65d6c5bd9c5715e41c6a9af1eb37a78d2319d510257",
+                  "size": 1411,
+                  "modified": 1787290030790.2449
+                }
+              },
+              "right": {
+                "hash": "4de9fe469858976e10d8cd2d78eec1d86c492f1a83128dab62ae172418cda2bb",
+                "file": {
+                  "path": "web\\src\\App.tsx",
+                  "hash": "4de9fe469858976e10d8cd2d78eec1d86c492f1a83128dab62ae172418cda2bb",
+                  "size": 1154,
+                  "modified": 1787283402791.0115
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "right": {
+      "hash": "6ebe3667a27346271c50a6127c3fde2cb6d29e6c11df9058918a746cee6441bd",
+      "left": {
+        "hash": "b248f0abe7e91f80ff388bb5aaad1fa91973b959683ce549d590a40186cf8557",
+        "left": {
+          "hash": "94612a157508fea934e0174beaefe7bfd5e866a2cb8973566400a9e72075eda5",
+          "left": {
+            "hash": "c86436474ea7ddf16b1f247c87c84c3c66c2fedbf095fec502708a79c252787e",
+            "left": {
+              "hash": "3810db7dc6fe4eaf256c694d6541a16d8e2597535c7d4ce255e5886603cb346e",
+              "left": {
+                "hash": "9740ffc23c0ab8777626bd031827ef54387a201eb92841eecb56723a01148911",
+                "file": {
+                  "path": "web\\src\\components\\BackToTop.tsx",
+                  "hash": "9740ffc23c0ab8777626bd031827ef54387a201eb92841eecb56723a01148911",
+                  "size": 820,
+                  "modified": 1787234876484.61
+                }
+              },
+              "right": {
+                "hash": "2e393f34a198b15ccfa49ac1f4b8acaaba9e71ea498033c8af9d5ed8ef32d7fd",
+                "file": {
+                  "path": "web\\src\\components\\FilterBar.tsx",
+                  "hash": "2e393f34a198b15ccfa49ac1f4b8acaaba9e71ea498033c8af9d5ed8ef32d7fd",
+                  "size": 4286,
+                  "modified": 1787234947151.6882
+                }
+              }
+            },
+            "right": {
+              "hash": "8d43162c6f4b9b640a593c0ef926aa490b8b31e3bb7baec9f2adc01784a76901",
+              "left": {
+                "hash": "089e0cb6b5e22344ac1a1e4426b62e40a39bd78a21810367fe36b558bc3ddfe1",
+                "file": {
+                  "path": "web\\src\\components\\GlitchText.tsx",
+                  "hash": "089e0cb6b5e22344ac1a1e4426b62e40a39bd78a21810367fe36b558bc3ddfe1",
+                  "size": 387,
+                  "modified": 1787234947152.6907
+                }
+              },
+              "right": {
+                "hash": "a88e3d47835bcd8b9ac4fa4a85549d4c6ceae5f9377f2abdec7c67738fa46dfe",
+                "file": {
+                  "path": "web\\src\\components\\home\\AgentSidebar.tsx",
+                  "hash": "a88e3d47835bcd8b9ac4fa4a85549d4c6ceae5f9377f2abdec7c67738fa46dfe",
+                  "size": 3657,
+                  "modified": 1787282218988.812
+                }
+              }
+            }
+          },
+          "right": {
+            "hash": "5193cb725b027c1a8db991088eea6221534ee0209cd0f6b960d954b7d2860f35",
+            "left": {
+              "hash": "c1f580bb37e67b254c22b40b6769fd5fa8ab1f87bfc758750106bb10c8574dec",
+              "left": {
+                "hash": "c4a17aa7cc6a13a7542bfc3e816c37f0ac6dfe7689753a27ec8a7ee23100bfc1",
+                "file": {
+                  "path": "web\\src\\components\\home\\HotFeed.tsx",
+                  "hash": "c4a17aa7cc6a13a7542bfc3e816c37f0ac6dfe7689753a27ec8a7ee23100bfc1",
+                  "size": 8006,
+                  "modified": 1787284295762.4038
+                }
+              },
+              "right": {
+                "hash": "9d598deff7fdc36723eecf1c02664e22278f715378e41825f76c4694734488c5",
+                "file": {
+                  "path": "web\\src\\components\\home\\SearchInsights.tsx",
+                  "hash": "9d598deff7fdc36723eecf1c02664e22278f715378e41825f76c4694734488c5",
+                  "size": 5005,
+                  "modified": 1787283986096.1362
+                }
+              }
+            },
+            "right": {
+              "hash": "b4479bdb9f64d1eccbe29426456e94b85f57914352b506711ae4953a337f5fc4",
+              "left": {
+                "hash": "f456b50e8a0b78250eb58c95d2fd50f311129482793c79ea2e3744bbba23d9d9",
+                "file": {
+                  "path": "web\\src\\components\\ItemCard.tsx",
+                  "hash": "f456b50e8a0b78250eb58c95d2fd50f311129482793c79ea2e3744bbba23d9d9",
+                  "size": 2170,
+                  "modified": 1787234947113.5894
+                }
+              },
+              "right": {
+                "hash": "f406d8a3051772f0660552257a5af303dcee5ab4b00d9e53e59014dc42242e6a",
+                "file": {
+                  "path": "web\\src\\components\\layout\\Header.tsx",
+                  "hash": "f406d8a3051772f0660552257a5af303dcee5ab4b00d9e53e59014dc42242e6a",
+                  "size": 2337,
+                  "modified": 1787283024521.9978
+                }
+              }
+            }
+          }
+        },
+        "right": {
+          "hash": "a5b86deea5526f51d0b8d1b3e8325d85592587ccbe2f4e8bbb94d0c4e163cc8b",
+          "left": {
+            "hash": "984cbb4f599aa4f015541297891d00d618041b1af316370844cca35f9430c2ad",
+            "left": {
+              "hash": "8bbbcbd721784daa0db28597a114ecf1dc9f91ca226072f13b540048b5806f54",
+              "left": {
+                "hash": "de57359a260dd85c67af14c5395fb229cbf22b24d41622cf2f65f422f238fa05",
+                "file": {
+                  "path": "web\\src\\components\\layout\\HeroSection.tsx",
+                  "hash": "de57359a260dd85c67af14c5395fb229cbf22b24d41622cf2f65f422f238fa05",
+                  "size": 2935,
+                  "modified": 1787282191463.373
+                }
+              },
+              "right": {
+                "hash": "9999edacd16c14d52c70ed53b35f8afbc550440e31ca543b222a759df39fd4eb",
+                "file": {
+                  "path": "web\\src\\components\\layout\\StatsBar.tsx",
+                  "hash": "9999edacd16c14d52c70ed53b35f8afbc550440e31ca543b222a759df39fd4eb",
+                  "size": 1024,
+                  "modified": 1787290043317.4814
+                }
+              }
+            },
+            "right": {
+              "hash": "ae66eb60f00b89a8ea5b1807899647a48ba0155291dc0799da80d192ed7866c4",
+              "left": {
+                "hash": "e8269a7025d7f410a75eebc665d5718dee9bba16e2d242d37b2636aac0171b2e",
+                "file": {
+                  "path": "web\\src\\components\\ScanlineOverlay.tsx",
+                  "hash": "e8269a7025d7f410a75eebc665d5718dee9bba16e2d242d37b2636aac0171b2e",
+                  "size": 60,
+                  "modified": 1787234947154.6887
+                }
+              },
+              "right": {
+                "hash": "b6ee6bb7e0969cb66a46cf4c52c91e8eda4d7a16627904011cc12eceee99ba22",
+                "file": {
+                  "path": "web\\src\\components\\Sidebar.tsx",
+                  "hash": "b6ee6bb7e0969cb66a46cf4c52c91e8eda4d7a16627904011cc12eceee99ba22",
+                  "size": 1571,
+                  "modified": 1787235422950.1748
+                }
+              }
+            }
+          },
+          "right": {
+            "hash": "e1a56d387889458f91c04e53af4ffa0358be97032186754cec32ca8f2b0d1384",
+            "left": {
+              "hash": "504513d258043c485578ff7960d0bb3e8046111eb390bd0af8888d24cb0032dd",
+              "left": {
+                "hash": "5a1c7a26b5e7921d47085c89a7544baa43c02aa40b67767cb316ca34a278fc8b",
+                "file": {
+                  "path": "web\\src\\components\\SourceCard.tsx",
+                  "hash": "5a1c7a26b5e7921d47085c89a7544baa43c02aa40b67767cb316ca34a278fc8b",
+                  "size": 2670,
+                  "modified": 1787234947114.6025
+                }
+              },
+              "right": {
+                "hash": "4c4545c16d1dceb5adab3eaae6ac0cbb76be8cab86f343c6da38c7889cb18a4b",
+                "file": {
+                  "path": "web\\src\\components\\StatCard.tsx",
+                  "hash": "4c4545c16d1dceb5adab3eaae6ac0cbb76be8cab86f343c6da38c7889cb18a4b",
+                  "size": 872,
+                  "modified": 1787234876484.61
+                }
+              }
+            },
+            "right": {
+              "hash": "01f6e3007334eba56d9c0c7b5c26a9feb17395d54f79b0ce5a239f9f00cbae03",
+              "left": {
+                "hash": "c195b73297378774aadf887a682cd3c011801c35067961772cf1c0036e8562b5",
+                "file": {
+                  "path": "web\\src\\main.tsx",
+                  "hash": "c195b73297378774aadf887a682cd3c011801c35067961772cf1c0036e8562b5",
+                  "size": 642,
+                  "modified": 1787235040065.0938
+                }
+              },
+              "right": {
+                "hash": "89b0b4fa00f2aa07021b519067f0fce1e41f8f97e052d01f7a9f56cac79af194",
+                "file": {
+                  "path": "web\\src\\screens\\Agents.tsx",
+                  "hash": "89b0b4fa00f2aa07021b519067f0fce1e41f8f97e052d01f7a9f56cac79af194",
+                  "size": 2652,
+                  "modified": 1787283392660.0515
+                }
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "hash": "c4bd3fe5fc7ef9d140a6dc4de85dd2f6f2394246331cbfa3cbe4d3f59f5756fa",
+        "left": {
+          "hash": "ad46d8669f91e078c1280116032c84fa38070a47c4a9725f9f632bfb04431c24",
+          "left": {
+            "hash": "12fd6cc4c4179dcec2ad46d1e188af8848e8a81f543327883f1ba35b3da3de72",
+            "left": {
+              "hash": "f163aa7dab99d7be53e208394cb234ecbd346415d509abca872257b7de1635f0",
+              "file": {
+                "path": "web\\src\\screens\\Briefings.tsx",
+                "hash": "f163aa7dab99d7be53e208394cb234ecbd346415d509abca872257b7de1635f0",
+                "size": 5698,
+                "modified": 1787235025289.827
+              }
+            },
+            "right": {
+              "hash": "7f98670f61e43cba00722c5f6d39b2c374d9a0dcb4aabdcd1a5f57296377c5ed",
+              "file": {
+                "path": "web\\src\\screens\\Home.tsx",
+                "hash": "7f98670f61e43cba00722c5f6d39b2c374d9a0dcb4aabdcd1a5f57296377c5ed",
+                "size": 1210,
+                "modified": 1787288626729.453
+              }
+            }
+          },
+          "right": {
+            "hash": "b4611de670f7b569a259cec6f51522f81ba832cc747ab046acc3441039e8d32c",
+            "left": {
+              "hash": "a1b712da403e5597c0a7078aa4e87a07b4f8f8e3ec55db4b57d746adecc2e62d",
+              "file": {
+                "path": "web\\src\\screens\\Sources.tsx",
+                "hash": "a1b712da403e5597c0a7078aa4e87a07b4f8f8e3ec55db4b57d746adecc2e62d",
+                "size": 1595,
+                "modified": 1787235395787.4841
+              }
+            },
+            "right": {
+              "hash": "0fe0614bab9e600db1dad81ad9c213cfb02fa0f51dc1e492b66f67358c6ee912",
+              "file": {
+                "path": "web\\src\\screens\\Welcome.tsx",
+                "hash": "0fe0614bab9e600db1dad81ad9c213cfb02fa0f51dc1e492b66f67358c6ee912",
+                "size": 2604,
+                "modified": 1787284873889.7007
+              }
+            }
+          }
+        },
+        "right": {
+          "hash": "a362fa806ea78f820d93f7cd5bc30c5acb479e0603b6ff8b2f8c21535fb6d163",
+          "left": {
+            "hash": "3dc059bee4ff2a21a313be0fc2a91684ff3bc2caa9d685c4ccf387fc444853fb",
+            "left": {
+              "hash": "3faf2e0d15760dcfc10d23733c1f50bcc51fa9fb4a4b37a7c4a7b65f559878e8",
+              "file": {
+                "path": "web\\src\\store\\useAppStore.ts",
+                "hash": "3faf2e0d15760dcfc10d23733c1f50bcc51fa9fb4a4b37a7c4a7b65f559878e8",
+                "size": 560,
+                "modified": 1787282879743.7004
+              }
+            },
+            "right": {
+              "hash": "2f52245d4fb19b720b1e5be4c6ed071915ec84da11cce9b141b3d3a0849d23d4",
+              "file": {
+                "path": "web\\src\\vite-env.d.ts",
+                "hash": "2f52245d4fb19b720b1e5be4c6ed071915ec84da11cce9b141b3d3a0849d23d4",
+                "size": 38,
+                "modified": 1787233940719.5015
+              }
+            }
+          },
+          "right": {
+            "hash": "0bab1f138028928fc816ac1983d43024edf798d1b7b4856b3f211d6b90c4bb35",
+            "file": {
+              "path": "web\\vite.config.ts",
+              "hash": "0bab1f138028928fc816ac1983d43024edf798d1b7b4856b3f211d6b90c4bb35",
+              "size": 268,
+              "modified": 1787233896626.662
+            }
+          }
+        }
+      }
+    }
+  }
+}
