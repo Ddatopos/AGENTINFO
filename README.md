@@ -445,17 +445,12 @@ const STRONG = [
 
 ---
 
-## 📄 许可证
-
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件。
-
----
 
 ## 📮 联系方式
 
-- 项目主页：https://github.com/yourusername/agentinfo
-- 问题反馈：https://github.com/yourusername/agentinfo/issues
-- 邮箱：your.email@example.com
+- 项目主页：https://github.com/Ddatopos/agentinfo
+- 问题反馈：https://github.com/Ddatopos/agentinfo/issues
+- 邮箱：2115535310@qq.com
 
 ---
 
