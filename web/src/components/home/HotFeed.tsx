@@ -19,7 +19,6 @@ const rankColors: Record<number, string> = {
 export default function HotFeed({ categoryFilter, searchQuery }: Props) {
   const [page, setPage] = useState(1)
   const [showAll, setShowAll] = useState(false)
-  const [displayLimit, setDisplayLimit] = useState(200)
   const navigate = useNavigate()
 
   const buildQuery = (limit: number) => {
@@ -37,11 +36,6 @@ export default function HotFeed({ categoryFilter, searchQuery }: Props) {
     queryFn: () => get<{ items: Item[]; total: number }>(buildQuery(showAll ? 200 : 20)),
     staleTime: 0,
   })
-
-  const loadMore = () => {
-    setShowAll(true)
-    setPage(1)
-  }
 
   const todayItems = useMemo(() => {
     if (!data?.items) return []

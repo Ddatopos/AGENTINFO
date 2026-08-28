@@ -7,6 +7,8 @@ import Sources from './screens/Sources'
 import Agents from './screens/Agents'
 import Header from './components/layout/Header'
 import BackToTop from './components/BackToTop'
+import AiAssistantButton from './components/chat/AiAssistantButton'
+import ChatWindow from './components/chat/ChatWindow'
 
 export default function App() {
   const welcomeDismissed = useAppStore((s) => s.welcomeDismissed)
@@ -30,6 +32,8 @@ export default function App() {
         </Routes>
       </main>
       <BackToTop />
+      <AiAssistantButton />
+      <ChatWindow />
     </div>
   )
 }

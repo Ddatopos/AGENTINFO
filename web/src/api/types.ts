@@ -73,3 +73,23 @@ export interface SourceRunResult {
   durationMs: number
   error?: string
 }
+
+export interface Message {
+  id: number
+  conversationId: string
+  role: 'user' | 'assistant'
+  content: string
+  createdAt: number
+}
+
+export interface Conversation {
+  id: string
+  title: string | null
+  createdAt: number
+  updatedAt: number
+}
+
+export interface ConversationDetail {
+  conversation: Conversation
+  messages: Message[]
+}

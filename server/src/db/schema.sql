@@ -91,3 +91,22 @@ CREATE INDEX IF NOT EXISTS idx_fetchlog_src ON fetch_log(source_id, started_at D
 -- seg 列存 Intl.Segmenter 预分词结果，解决 FTS5 默认分词器切不开中文的问题
 -- rowid 与 items.id 对齐，由应用层在 upsert 时手动同步
 CREATE VIRTUAL TABLE IF NOT EXISTS items_fts USING fts5(title, summary_zh, seg);
+
+-- AI 助手对话会话
+CREATE TABLE IF NOT EXISTS conversations (
+  id         TEXT PRIMARY KEY,
+  title      TEXT,
+  created_at INTEGER NOT NULL,
+  updated_at INTEGER NOT NULL
+);
+
+-- AI 助手消息记录
+CREATE TABLE IF NOT EXISTS messages (
+  id              INTEGER PRIMARY KEY,
+  conversation_id TEXT NOT NULL REFERENCES conversations(id) ON DELETE CASCADE,
+  role            TEXT NOT NULL, -- 'user' | 'assistant'
+  content         TEXT NOT NULL,
+  created_at      INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_messages_conv ON messages(conversation_id, created_at ASC);
