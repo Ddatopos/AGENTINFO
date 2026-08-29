@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, Request } from 'express';
 import OpenAI from 'openai';
 import { db } from '../db/index.js';
 import { config } from '../config.js';
@@ -16,6 +16,26 @@ function getOpenAIClient(): OpenAI | null {
     maxRetries: 2,
   });
   return openaiClient;
+}
+
+function resolveClient(req: Request): OpenAI | null {
+  const overrideKey = (req.get('x-llm-api-key') || '').trim();
+  const overrideBaseUrl = (req.get('x-llm-base-url') || '').trim();
+  if (overrideKey) {
+    return new OpenAI({
+      apiKey: overrideKey,
+      baseURL: overrideBaseUrl || config.llm.baseUrl,
+      timeout: config.llm.timeout,
+      maxRetries: 2,
+    });
+  }
+  return getOpenAIClient();
+}
+
+function resolveModel(req: Request): string {
+  const overrideModel = (req.get('x-llm-model') || '').trim();
+  if (overrideModel) return overrideModel;
+  return config.llm.model;
 }
 
 const SYSTEM_PROMPT = `你是 AI 领域的智能助手，专门帮助用户了解 AI/LLM/智能体相关的技术资讯。
@@ -110,9 +130,9 @@ chatRouter.post('/conversations/:id/messages', async (req, res) => {
     return;
   }
 
-  const api = getOpenAIClient();
+  const api = resolveClient(req);
   if (!api) {
-    res.status(503).json({ error: 'LLM 服务未配置' });
+    res.status(503).json({ error: 'LLM 服务未配置，请在 Header 设置中配置 API Key' });
     return;
   }
 
@@ -153,7 +173,7 @@ chatRouter.post('/conversations/:id/messages', async (req, res) => {
 
   try {
     const stream = await api.chat.completions.create({
-      model: config.llm.model,
+      model: resolveModel(req),
       messages,
       stream: true,
       temperature: 0.7,
@@ -163,10 +183,12 @@ chatRouter.post('/conversations/:id/messages', async (req, res) => {
     let fullContent = '';
 
     for await (const chunk of stream) {
-      const delta = chunk.choices[0]?.delta?.content;
-      if (delta) {
-        fullContent += delta;
-        res.write(`data: ${JSON.stringify({ delta })}\n\n`);
+      if (!chunk.choices?.[0]) continue;
+      const delta = chunk.choices[0].delta;
+      const text = (delta as { content?: string; text?: string }).content || (delta as { content?: string; text?: string }).text;
+      if (text) {
+        fullContent += text;
+        res.write(`data: ${JSON.stringify({ delta: text })}\n\n`);
       }
     }
 
@@ -185,8 +207,9 @@ chatRouter.post('/conversations/:id/messages', async (req, res) => {
     res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
     res.end();
   } catch (err) {
-    console.error('[chat] 流式响应错误:', err instanceof Error ? err.message : String(err));
-    res.write(`data: ${JSON.stringify({ error: '生成回复失败' })}\n\n`);
+    const detail = err instanceof Error ? err.message : String(err);
+    console.error('[chat] 流式响应错误:', detail);
+    res.write(`data: ${JSON.stringify({ error: '生成回复失败', detail })}\n\n`);
     res.end();
   }
 });

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useChatStore } from '../../store/useChatStore'
+import { useConfigStore } from '../../store/useConfigStore'
 import { createConversation, sendMessage } from '../../api/chat'
 import type { Message } from '../../api/types'
 
@@ -31,6 +32,9 @@ export default function ChatWindow() {
   const [input, setInput] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
+  const configApiKey = useConfigStore((s) => s.apiKey)
+  const configBaseUrl = useConfigStore((s) => s.baseUrl)
+  const configModel = useConfigStore((s) => s.model)
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -79,7 +83,7 @@ export default function ChatWindow() {
       await sendMessage(convId, userContent, (delta) => {
         fullResponse += delta
         appendStreamingContent(delta)
-      })
+      }, configApiKey || undefined, configBaseUrl || undefined, configModel || undefined)
 
       const assistantMessage: Message = {
         id: Date.now() + 1,
@@ -92,11 +96,12 @@ export default function ChatWindow() {
       clearStreamingContent()
     } catch (err) {
       console.error('发送消息失败:', err)
+      const errorContent = err instanceof Error ? err.message : String(err)
       const errorMessage: Message = {
         id: Date.now() + 1,
         conversationId: convId,
         role: 'assistant',
-        content: '抱歉，生成回复时出现错误，请重试。',
+        content: `抱歉，生成回复失败：${errorContent}`,
         createdAt: Date.now(),
       }
       addMessage(errorMessage)

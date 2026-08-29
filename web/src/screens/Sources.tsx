@@ -1,6 +1,5 @@
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { get, post } from '../api/client'
-import type { SourceStatus, SourceRunResult } from '../api/types'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { getSources, triggerFetch } from '../api/sources'
 import SourceCard from '../components/SourceCard'
 
 export default function Sources() {
@@ -8,16 +7,14 @@ export default function Sources() {
 
   const { data, isLoading } = useQuery({
     queryKey: ['sources'],
-    queryFn: () => get<{ sources: SourceStatus[] }>('/sources'),
+    queryFn: getSources,
     refetchInterval: 60000,
   })
 
-  const fetchMutation = useMutation({
-    mutationFn: (id: string) => post<SourceRunResult>(`/sources/${id}/fetch`),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['sources'] })
-    },
-  })
+  const handleFetch = async (id: string) => {
+    await triggerFetch(id)
+    queryClient.invalidateQueries({ queryKey: ['sources'] })
+  }
 
   return (
     <div className="p-6 md:p-8">
@@ -35,7 +32,7 @@ export default function Sources() {
           <SourceCard
             key={source.id}
             source={source}
-            onFetch={(id) => fetchMutation.mutate(id)}
+            onFetch={handleFetch}
           />
         ))}
       </div>

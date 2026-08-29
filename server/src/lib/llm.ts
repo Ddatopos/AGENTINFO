@@ -9,7 +9,7 @@ import { config } from '../config.js';
 
 let client: OpenAI | null = null;
 
-function getClient(): OpenAI | null {
+export function getClient(): OpenAI | null {
   if (!config.llm.enabled) return null;
   client ??= new OpenAI({
     apiKey: config.llm.apiKey,

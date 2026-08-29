@@ -1,5 +1,6 @@
 import { ProxyAgent } from 'undici';
 import { config } from '../config.js';
+import { db } from '../db/index.js';
 
 /** 每个 host 串行 + 最小间隔，避免触发对方限流（arXiv TOU 要求 ~3s）。 */
 const hostQueue = new Map<string, Promise<unknown>>();
@@ -11,15 +12,55 @@ const hostLastAt = new Map<string, number>();
  */
 let proxyAgent: ProxyAgent | null = null;
 
+/** 动态代理缓存：避免每请求都查库 */
+interface DynamicProxy {
+  url: string;
+  noProxy: string[];
+  fetchedAt: number;
+}
+let dynamicProxy: DynamicProxy | null = null;
+const DYNAMIC_PROXY_TTL = 5_000; // 5 秒 TTL
+
+function loadDynamicProxy(): DynamicProxy {
+  const now = Date.now();
+  if (dynamicProxy && now - dynamicProxy.fetchedAt < DYNAMIC_PROXY_TTL) {
+    return dynamicProxy;
+  }
+
+  const row = db()
+    .prepare(`SELECT value FROM local_config WHERE key = 'fetch_proxy_url'`)
+    .get() as { value: string } | undefined;
+
+  const proxyUrl = row?.value?.trim() ?? '';
+  const noProxy = (config.fetch.noProxy ?? []) as string[];
+
+  dynamicProxy = { url: proxyUrl, noProxy, fetchedAt: now };
+  return dynamicProxy;
+}
+
+export function getDynamicProxy(): { url: string; noProxy: string[] } {
+  const d = loadDynamicProxy();
+  return { url: d.url, noProxy: d.noProxy };
+}
+
+/** 当用户通过前端更新代理后，清掉缓存以便下次请求立即生效 */
+export function invalidateDynamicProxy(): void {
+  dynamicProxy = null;
+  proxyAgent = null;
+}
+
 function dispatcherFor(host: string): ProxyAgent | undefined {
-  if (!config.fetch.proxyUrl) return undefined;
+  const { url: proxyUrl, noProxy } = getDynamicProxy();
+
+  const effectiveUrl = proxyUrl || config.fetch.proxyUrl;
+  if (!effectiveUrl) return undefined;
 
   const lower = host.toLowerCase();
-  if (config.fetch.noProxy.some((suffix) => lower === suffix || lower.endsWith(`.${suffix}`))) {
+  if (noProxy.some((suffix) => lower === suffix || lower.endsWith(`.${suffix}`))) {
     return undefined;
   }
 
-  proxyAgent ??= new ProxyAgent(config.fetch.proxyUrl);
+  proxyAgent ??= new ProxyAgent(effectiveUrl);
   return proxyAgent;
 }
 

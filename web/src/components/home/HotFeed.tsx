@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import { get } from '../../api/client'
+import { getItemExplanation } from '../../api/items'
 import type { Item } from '../../api/types'
 
 type Props = {
@@ -20,6 +21,32 @@ export default function HotFeed({ categoryFilter, searchQuery }: Props) {
   const [page, setPage] = useState(1)
   const [showAll, setShowAll] = useState(false)
   const navigate = useNavigate()
+  const [explanations, setExplanations] = useState<Record<number, string>>({})
+  const [translations, setTranslations] = useState<Record<number, string>>({})
+  const [loadingMap, setLoadingMap] = useState<Record<number, 'explain' | 'translate' | null>>({})
+
+  const handleExplain = async (id: number, mode: 'explain' | 'translate') => {
+    const current = loadingMap[id]
+    if (current) return
+    setLoadingMap(s => ({ ...s, [id]: mode }))
+    try {
+      const result = await getItemExplanation(id, mode)
+      if (mode === 'explain') {
+        setExplanations(s => ({ ...s, [id]: result.text }))
+      } else {
+        setTranslations(s => ({ ...s, [id]: result.text }))
+      }
+    } catch (e) {
+      const errorText = e instanceof Error ? e.message : '加载失败，请重试'
+      if (mode === 'explain') {
+        setExplanations(s => ({ ...s, [id]: `❌ ${errorText}` }))
+      } else {
+        setTranslations(s => ({ ...s, [id]: `❌ ${errorText}` }))
+      }
+    } finally {
+      setLoadingMap(s => ({ ...s, [id]: null }))
+    }
+  }
 
   const buildQuery = (limit: number) => {
     const params = new URLSearchParams()
@@ -162,6 +189,38 @@ export default function HotFeed({ categoryFilter, searchQuery }: Props) {
                   </span>
                   <span>{timeAgo}</span>
                 </div>
+                <div className="mt-2 flex items-center gap-2">
+                  <button
+                    onClick={(e) => { e.stopPropagation(); handleExplain(item.id, 'explain') }}
+                    disabled={loadingMap[item.id] === 'explain'}
+                    className="text-[10px] font-sans font-semibold text-purple-600 hover:text-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loadingMap[item.id] === 'explain' ? '生成中…' : '✨ AI解释'}
+                  </button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); handleExplain(item.id, 'translate') }}
+                    disabled={loadingMap[item.id] === 'translate'}
+                    className="text-[10px] font-sans font-semibold text-green-600 hover:text-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loadingMap[item.id] === 'translate' ? '翻译中…' : '🌐 翻译'}
+                  </button>
+                </div>
+                {(explanations[item.id] || translations[item.id]) && (
+                  <div className="mt-2 rounded-xl bg-white/70 p-3 text-xs text-glass-text backdrop-blur-sm border border-glass-border/50">
+                    {explanations[item.id] && (
+                      <div className="mb-1">
+                        <span className="text-[10px] font-sans font-semibold text-purple-600">AI解释：</span>
+                        <span className="ml-1">{explanations[item.id]}</span>
+                      </div>
+                    )}
+                    {translations[item.id] && (
+                      <div>
+                        <span className="text-[10px] font-sans font-semibold text-green-600">中文翻译：</span>
+                        <span className="ml-1">{translations[item.id]}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           )

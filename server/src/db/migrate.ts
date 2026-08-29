@@ -11,7 +11,7 @@ import { db } from './index.js';
 import { segment } from '../lib/text.js';
 import { config } from '../config.js';
 
-const TABLES = ['sources', 'items', 'enrichments', 'scores', 'briefings', 'fetch_log'] as const;
+const TABLES = ['sources', 'items', 'enrichments', 'scores', 'briefings', 'fetch_log', 'conversations', 'messages'] as const;
 
 /**
  * 重建 FTS 索引。items_fts 是普通 FTS5 表（非 external content），

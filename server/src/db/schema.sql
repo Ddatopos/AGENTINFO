@@ -97,7 +97,8 @@ CREATE TABLE IF NOT EXISTS conversations (
   id         TEXT PRIMARY KEY,
   title      TEXT,
   created_at INTEGER NOT NULL,
-  updated_at INTEGER NOT NULL
+  updated_at INTEGER NOT NULL,
+  agent_id   TEXT
 );
 
 -- AI 助手消息记录
@@ -110,3 +111,10 @@ CREATE TABLE IF NOT EXISTS messages (
 );
 
 CREATE INDEX IF NOT EXISTS idx_messages_conv ON messages(conversation_id, created_at ASC);
+
+-- 运行时配置（用户通过前端写入，无需改 .env）
+CREATE TABLE IF NOT EXISTS local_config (
+  key       TEXT PRIMARY KEY,
+  value     TEXT NOT NULL,
+  updated_at INTEGER NOT NULL
+);

@@ -4,8 +4,8 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 const recommendedTags = [
   'AI Agent 技术趋势',
   'OpenAI 最新动态',
-  '量化交易策略',
-  '新能源发展报告',
+  '大模型微调教程',
+  'RAG 检索增强生成',
 ]
 
 export default function HeroSection() {

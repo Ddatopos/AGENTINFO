@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import { db } from '../db/index.js';
 import { segment } from '../lib/text.js';
+import { getClient } from '../lib/llm.js';
+import { config } from '../config.js';
 
 export const itemsRouter = Router();
 
@@ -142,6 +144,60 @@ itemsRouter.get('/', (req, res) => {
   }
 
   res.json({ items: rows.map(shape), total, limit, offset });
+});
+
+itemsRouter.get('/:id/explain', async (req, res) => {
+  const id = Number(req.params.id);
+  const mode = (req.query.mode as string) === 'translate' ? 'translate' : 'explain';
+
+  const row = db()
+    .prepare(`${SELECT_BASE} WHERE i.id = @id`)
+    .get({ id }) as ItemRow | undefined;
+
+  if (!row) {
+    res.status(404).json({ error: '未找到该条目' });
+    return;
+  }
+
+  const api = getClient();
+  if (!api) {
+    res.status(503).json({ error: 'LLM 服务未配置' });
+    return;
+  }
+
+  const title = row.title;
+  const sourceName = row.source_name;
+  const summaryZh = row.summary_zh;
+
+  const systemPrompt =
+    mode === 'translate'
+      ? '你是翻译专家。请用中文回答。\n要求：不要使用 markdown 格式符号（如 **粗体**、- 列表、## 标题等），使用自然的文本格式，用换行或数字序号组织内容，简洁明了。'
+      : '你是 AI 领域的智能助手。请用中文回答。\n要求：不要使用 markdown 格式符号（如 **粗体**、- 列表、## 标题等），使用自然的文本格式，用换行或数字序号组织内容，简洁明了，2-3 句话即可。';
+
+  const userPrompt = `标题：${title}\n来源：${sourceName}\n${summaryZh ? `摘要：${summaryZh}` : '（无摘要）'}\n\n${mode === 'translate' ? '请用中文简要说明这条资讯的核心内容。' : '请用 2-3 句话解释这条资讯的核心内容，以及为什么值得关注。'}\n\n要求：不要使用 markdown 符号，用自然文本格式回答。`;
+
+  try {
+    const response = await api.chat.completions.create({
+      model: config.llm.model,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt },
+      ],
+      temperature: 0.3,
+      max_tokens: 300,
+    });
+
+    const content = response.choices[0]?.message?.content?.trim();
+    if (!content) {
+      res.status(500).json({ error: '模型返回空内容' });
+      return;
+    }
+
+    res.json({ text: content });
+  } catch (err) {
+    console.error(`[items] explain 失败 (id=${id}, mode=${mode}):`, err instanceof Error ? err.message : String(err));
+    res.status(500).json({ error: '生成解释失败' });
+  }
 });
 
 /** GET /api/items/:id */

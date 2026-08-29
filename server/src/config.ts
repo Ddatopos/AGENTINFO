@@ -76,4 +76,11 @@ export const config = {
   } as Record<string, number>,
 
   disableAfterFailStreak: 8,
+
+  tavily: {
+    apiKey: process.env.TAVILY_API_KEY?.trim() ?? '',
+    get enabled(): boolean {
+      return this.apiKey.length > 0;
+    },
+  },
 } as const;

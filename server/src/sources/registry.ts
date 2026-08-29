@@ -21,7 +21,7 @@ export const SOURCES: SourceConfig[] = [
     kind: 'github_search',
     url: 'https://api.github.com/search/repositories',
     tier: 'A',
-    authority: 0.8,
+    authority: 0.9,
   },
   {
     id: 'github_trending',
@@ -29,7 +29,7 @@ export const SOURCES: SourceConfig[] = [
     kind: 'github_trending',
     url: 'https://github.com/trending?since=daily',
     tier: 'A',
-    authority: 0.8,
+    authority: 0.9,
   },
   {
     id: 'hf_papers',
@@ -37,7 +37,7 @@ export const SOURCES: SourceConfig[] = [
     kind: 'hf_papers',
     url: 'https://huggingface.co/api/daily_papers',
     tier: 'A',
-    authority: 0.8,
+    authority: 0.55,
   },
   {
     id: 'hf_models',
@@ -159,8 +159,8 @@ export const SOURCES: SourceConfig[] = [
     kind: 'rss',
     url: 'https://rss.arxiv.org/rss/cs.AI',
     tier: 'C',
-    authority: 0.85,
-    minIntervalMs: 3000, // arXiv TOU 要求约 3 秒间隔
+    authority: 0.5,
+    minIntervalMs: 3000,
   },
   {
     id: 'openai_cookbook',

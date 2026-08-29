@@ -17,13 +17,14 @@ interface SourceStatusRow {
   fail_streak: number;
   item_count: number;
   last_error: string | null;
+  fetch_status: string;
 }
 
 /** GET /api/sources —— 看板侧栏用：每个源的条目数、上次抓取时间、失败情况 */
 sourcesRouter.get('/', (_req, res) => {
   const rows = db()
     .prepare(
-      `SELECT s.id, s.name, s.kind, s.tier, s.authority, s.enabled, s.last_fetch_at, s.fail_streak,
+      `SELECT s.id, s.name, s.kind, s.tier, s.authority, s.enabled, s.last_fetch_at, s.fail_streak, s.fetch_status,
               (SELECT COUNT(*) FROM items i WHERE i.source_id = s.id) AS item_count,
               (SELECT error FROM fetch_log fl WHERE fl.source_id = s.id AND fl.ok = 0
                 ORDER BY fl.started_at DESC LIMIT 1) AS last_error
@@ -44,24 +45,46 @@ sourcesRouter.get('/', (_req, res) => {
       failStreak: r.fail_streak,
       itemCount: r.item_count,
       lastError: r.last_error,
+      fetchStatus: r.fetch_status,
     })),
   });
 });
 
+sourcesRouter.get('/:id/fetch-status', (req, res) => {
+  const row = db()
+    .prepare(`SELECT fetch_status FROM sources WHERE id = ?`)
+    .get(req.params.id) as { fetch_status: string } | undefined;
+
+  res.json({ fetchStatus: row?.fetch_status ?? 'idle' });
+});
+
 /** POST /api/sources/:id/fetch —— 手动触发单源抓取，调试用 */
-sourcesRouter.post('/:id/fetch', async (req, res, next) => {
-  try {
-    const src = findSource(String(req.params.id));
-    if (!src) {
-      res.status(404).json({ error: '未找到该数据源' });
-      return;
-    }
-    const result = await fetchSource(src);
-    recomputeScores();
-    res.json(result);
-  } catch (err) {
-    next(err);
+sourcesRouter.post('/:id/fetch', async (req, res) => {
+  const src = findSource(String(req.params.id));
+  if (!src) {
+    res.status(404).json({ error: '未找到该数据源' });
+    return;
   }
+
+  db()
+    .prepare(`UPDATE sources SET fetch_status = 'running' WHERE id = ?`)
+    .run(src.id);
+
+  res.status(202).json({ fetchStatus: 'running' });
+
+  (async () => {
+    try {
+      const result = await fetchSource(src);
+      recomputeScores();
+      console.log(`[sources] 手动抓取完成 [${src.id}]:`, JSON.stringify(result));
+    } catch (err) {
+      console.error(`[sources] 手动抓取失败 [${src.id}]:`, err instanceof Error ? err.message : String(err));
+    } finally {
+      db()
+        .prepare(`UPDATE sources SET fetch_status = 'idle' WHERE id = ?`)
+        .run(src.id);
+    }
+  })();
 });
 
 /** GET /api/stats —— 顶部概览 */

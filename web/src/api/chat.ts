@@ -9,8 +9,8 @@ export async function getConversation(id: string): Promise<ConversationDetail> {
   return get(`/chat/conversations/${id}`)
 }
 
-export async function createConversation(title?: string): Promise<Conversation> {
-  return post('/chat/conversations', { title })
+export async function createConversation(title?: string, agentId?: string): Promise<Conversation> {
+  return post('/chat/conversations', { title, agentId })
 }
 
 export async function deleteConversation(id: string): Promise<{ ok: boolean }> {
@@ -26,10 +26,18 @@ export async function sendMessage(
   conversationId: string,
   content: string,
   onDelta: (delta: string) => void,
+  apiKey?: string,
+  baseUrl?: string,
+  model?: string,
 ): Promise<void> {
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+  if (apiKey) headers['X-LLM-API-Key'] = apiKey
+  if (baseUrl) headers['X-LLM-Base-Url'] = baseUrl
+  if (model) headers['X-LLM-Model'] = model
+
   const res = await fetch(`/api/chat/conversations/${conversationId}/messages`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify({ content }),
   })
 
@@ -59,7 +67,8 @@ export async function sendMessage(
             onDelta(parsed.delta)
           }
           if (parsed.error) {
-            throw new Error(parsed.error)
+            const detail = (parsed as { detail?: string }).detail
+            throw new Error(detail || parsed.error)
           }
         } catch (err) {
           if (err instanceof SyntaxError) {

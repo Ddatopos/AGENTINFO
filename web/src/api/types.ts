@@ -27,6 +27,7 @@ export interface SourceStatus {
   failStreak: number;
   itemCount: number;
   lastError: string | null;
+  fetchStatus: 'idle' | 'running';
 }
 
 export interface BriefingMeta {

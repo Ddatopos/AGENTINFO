@@ -8,6 +8,8 @@ import { itemsRouter } from './routes/items.js';
 import { sourcesRouter, statsRouter } from './routes/sources.js';
 import { briefingsRouter } from './routes/briefings.js';
 import { chatRouter } from './routes/chat.js';
+import { llmRouter } from './routes/llm.js';
+import { configRouter } from './routes/config.js';
 
 const app = express();
 
@@ -31,7 +33,9 @@ app.use('/api/items', itemsRouter);
 app.use('/api/sources', sourcesRouter);
 app.use('/api/stats', statsRouter);
 app.use('/api/briefings', briefingsRouter);
+app.use('/api/llm', llmRouter);
 app.use('/api/chat', chatRouter);
+app.use('/api/config', configRouter);
 
 // 404 兜底
 app.use((_req, res) => {

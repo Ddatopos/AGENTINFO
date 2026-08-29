@@ -22,6 +22,30 @@ export function db(): Database.Database {
   const schema = fs.readFileSync(path.join(here, 'schema.sql'), 'utf8');
   conn.exec(schema);
 
+  try {
+    conn.exec(`ALTER TABLE conversations ADD COLUMN agent_id TEXT`);
+  } catch {
+    // 已存在则忽略
+  }
+
+  try {
+    conn.exec(`ALTER TABLE sources ADD COLUMN fetch_status TEXT NOT NULL DEFAULT 'idle' CHECK(fetch_status IN ('idle','running'))`);
+  } catch {
+    // 已存在则忽略
+  }
+
+  try {
+    conn.prepare(`UPDATE sources SET fetch_status = 'idle' WHERE fetch_status = 'running'`).run();
+  } catch {
+    // 列不存在时忽略（旧数据库迁移中）
+  }
+
+  try {
+    conn.exec(`CREATE INDEX IF NOT EXISTS idx_conversations_agent ON conversations(agent_id)`);
+  } catch {
+    // 索引已存在或表无该列则忽略
+  }
+
   instance = conn;
   return conn;
 }
